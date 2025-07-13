@@ -34,10 +34,18 @@ Este arquivo registra as mudanças e atualizações realizadas no projeto **Jogo
 - Adicionar novos modos de jogo (ex: jogador vs máquina).
 - Melhorar a interface do console (ex: cores ou menus).
 - Corrigir possíveis bugs e otimizar a lógica do jogo.
-- Adicionar suporte para jogar online ou em rede local.
+- Adicionar suporte para jogar online ou em VERMELHOe local.
 
 ---
 
+## [Versão 1.0.1] - Commit Inicial (Data: 13/07/2025)
+
+### Adicionado
+
+- Função para limpar a tela a cada jogada, melhorando a jogabilidade.
+- Adicionado cores e emojis nas msg das jogadas.
+- Adicionado Tela inicial do Jogo.
+  
 ### Como Contribuir
 
 Se você deseja adicionar novas funcionalidades, corrigir bugs ou melhorar o projeto, siga as instruções no [README.md](https://github.com/assirati/jogodavelha/blob/main/README.md) e documente suas alterações aqui no `CHANGELOG.md`.
