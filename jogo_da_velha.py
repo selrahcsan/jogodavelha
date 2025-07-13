@@ -94,5 +94,6 @@ def jogo_da_velha():
         jogador_atual = "O" if jogador_atual == "X" else "X"
 
 # Iniciar o jogo
-limpa_tela()
-jogo_da_velha()
+if __name__ == "__main__":
+    limpa_tela()
+    jogo_da_velha()
