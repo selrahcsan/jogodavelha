@@ -14,10 +14,30 @@ AMARELO = "\033[33m"
 AZUL = "\033[34m"
 RESET = "\033[0m"
 
-
 # Função para Limpar a Tela 
 def limpa_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
+
+# Tela Incial do Jogo
+def tela_inicial():
+    print(fr"""{AZUL}
+                 _____                                            __                                       __  __                 
+                |     \                                          |  \                                     |  \|  \                
+                \$$$$$  ______    ______    ______          ____| $$  ______         __     __   ______  | $$| $$____    ______  
+                  | $$ /      \  /      \  /      \        /      $$ |      \       |  \   /  \ /      \ | $$| $$    \  |      \ 
+             __   | $$|  $$$$$$\|  $$$$$$\|  $$$$$$\      |  $$$$$$$  \$$$$$$\       \$$\ /  $$|  $$$$$$\| $$| $$$$$$$\  \$$$$$$\
+            |  \  | $$| $$  | $$| $$  | $$| $$  | $$      | $$  | $$ /      $$        \$$\  $$ | $$    $$| $$| $$  | $$ /      $$
+            | $$__| $$| $$__/ $$| $$__| $$| $$__/ $$      | $$__| $$|  $$$$$$$         \$$ $$  | $$$$$$$$| $$| $$  | $$|  $$$$$$$
+             \$$    $$ \$$    $$ \$$    $$ \$$    $$       \$$    $$ \$$    $$          \$$$    \$$     \| $$| $$  | $$ \$$    $$
+              \$$$$$$   \$$$$$$  _\$$$$$$$  \$$$$$$         \$$$$$$$  \$$$$$$$           \$      \$$$$$$$ \$$ \$$   \$$  \$$$$$$$
+                               |  \__| $$                                                                                       
+                                \$$    $$                                                                                       
+                                 \$$$$$$                                                                                                                                                                                       
+          {RESET}""")
+    print("                                                 ⚙️  Desenvolvido por Rodrigo Assirati Dias")
+    print("                                                 ⚒️  Contribuição Charles Santana\n")
+    input(f"                                             {AMARELO} ❌ Aperte qualquer tecla para continuar ⭕{RESET}")
+    limpa_tela()
 
 # Função que, dado um tabuleiro, exibe esse tabuleiro de Jogo da Velha no console.
 def exibir_tabuleiro(tabuleiro):
@@ -108,4 +128,5 @@ def jogo_da_velha():
 # Iniciar o jogo
 if __name__ == "__main__":
     limpa_tela()
+    tela_inicial()
     jogo_da_velha()
