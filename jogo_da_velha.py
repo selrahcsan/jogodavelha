@@ -60,19 +60,22 @@ def jogo_da_velha():
             jogada = int(input(f"Jogador {jogador_atual}, escolha uma posição (1-9): ")) - 1
             limpa_tela()
         except ValueError:
-            print("Entrada inválida. Por favor, insira um número entre 1 e 9.")
+            input("\033[31mEntrada inválida\033[0m.\nPor favor, insira um número entre 1 e 9.\nAperte qualquer tecla para continuar...")
+            limpa_tela()
             continue
 
         # Verificar se a jogada é válida
         if jogada < 0 or jogada > 8:
-            print("Posição inválida. Escolha um número entre 1 e 9.")
+            input("\033[31mPosição inválida.\033[0m\nEscolha um número entre 1 e 9.\nAperte qualquer tecla para continuar...")
+            limpa_tela()
             continue
 
         linha = jogada // 3
         coluna = jogada % 3
 
         if tabuleiro[linha][coluna] in ["X", "O"]:
-            print("Posição já ocupada. Escolha outra posição.")
+            input("\033[31mPosição já ocupada.\033[0m\nEscolha outra posição.\nAperte qualquer tecla para continuar...")
+            limpa_tela()
             continue
 
         # Fazer a jogada
