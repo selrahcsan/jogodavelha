@@ -1,9 +1,15 @@
+import os
+
 # Tabuleiro do Jogo da Velha
 tabuleiro = [
     ["1", "2", "3"],
     ["4", "5", "6"],
     ["7", "8", "9"]
 ]
+
+# Função para Limpar a Tela 
+def limpa_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 # Função que, dado um tabuleiro, exibe esse tabuleiro de Jogo da Velha no console.
 def exibir_tabuleiro(tabuleiro):
@@ -52,6 +58,7 @@ def jogo_da_velha():
         # Solicitar a jogada do jogador
         try:
             jogada = int(input(f"Jogador {jogador_atual}, escolha uma posição (1-9): ")) - 1
+            limpa_tela()
         except ValueError:
             print("Entrada inválida. Por favor, insira um número entre 1 e 9.")
             continue
@@ -87,4 +94,5 @@ def jogo_da_velha():
         jogador_atual = "O" if jogador_atual == "X" else "X"
 
 # Iniciar o jogo
+limpa_tela()
 jogo_da_velha()
