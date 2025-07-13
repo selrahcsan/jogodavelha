@@ -8,11 +8,12 @@ tabuleiro = [
 ]
 
 # Códigos de cor ANSI
-RED = "\033[31m"
-GREEN = "\033[32m"
-YELLOW = "\033[33m"
-BLUE = "\033[34m"
+VERMELHO = "\033[31m"
+VERDE = "\033[32m"
+AMARELO = "\033[33m"
+AZUL = "\033[34m"
 RESET = "\033[0m"
+
 
 # Função para Limpar a Tela 
 def limpa_tela():
@@ -64,16 +65,16 @@ def jogo_da_velha():
 
         # Solicitar a jogada do jogador
         try:
-            jogada = int(input(f"Jogador {jogador_atual}, escolha uma posição (1-9): ")) - 1
+            jogada = int(input(f"{AMARELO}Jogador {jogador_atual}{RESET}, escolha uma posição (1-9): ")) - 1
             limpa_tela()
         except ValueError:
-            input("\033[31mEntrada inválida\033[0m.\nPor favor, insira um número entre 1 e 9.\nAperte qualquer tecla para continuar...")
+            input(f"{VERMELHO}❌ Entrada inválida!{RESET} Por favor, insira um número entre 1 e 9.\nAperte Qualquer tecla para continuar")
             limpa_tela()
             continue
 
         # Verificar se a jogada é válida
         if jogada < 0 or jogada > 8:
-            input("\033[31mPosição inválida.\033[0m\nEscolha um número entre 1 e 9.\nAperte qualquer tecla para continuar...")
+            input(f"{VERMELHO}❌ Posição já ocupada!{RESET} Escolha outra posição.\nAperte Qualquer tecla para continuar")
             limpa_tela()
             continue
 
@@ -81,27 +82,28 @@ def jogo_da_velha():
         coluna = jogada % 3
 
         if tabuleiro[linha][coluna] in ["X", "O"]:
-            input("\033[31mPosição já ocupada.\033[0m\nEscolha outra posição.\nAperte qualquer tecla para continuar...")
+            input(f"{VERMELHO}❌ Posição já ocupada!{RESET} Escolha outra posição.\nAperte qualquer tecla para continuar  ")
             limpa_tela()
             continue
 
         # Fazer a jogada
         tabuleiro[linha][coluna] = jogador_atual
+        print(f"{VERDE}✔️ Jogada realizada com sucesso!{RESET}")
 
         # Verificar se o jogador atual venceu
         if verificar_vencedor(tabuleiro, jogador_atual):
             exibir_tabuleiro(tabuleiro)
-            print(f"Parabéns! O jogador {jogador_atual} venceu!")
+            print(f"{VERDE}🎉 Parabéns! O jogador {jogador_atual} venceu! 🏆{RESET}\n")
             break
 
         # Verificar se o jogo terminou em empate
         if verificar_empate(tabuleiro):
             exibir_tabuleiro(tabuleiro)
-            print("O jogo terminou em empate!")
+            print(f"{AMARELO}🤝 O jogo terminou em empate!{RESET}")
             break
 
         # Alternar entre os jogadores
-        jogador_atual = "O" if jogador_atual == "X" else "X"
+        jogador_atual = "O" if jogador_atual == "X"  else "X"
 
 # Iniciar o jogo
 if __name__ == "__main__":
